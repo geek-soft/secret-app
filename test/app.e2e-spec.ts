@@ -13,8 +13,8 @@ describe('AppController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
-    app.useStaticAssets(join(__dirname, '..', 'src', 'public'));
-    app.setBaseViewsDir(join(__dirname, '..', 'src', 'views'));
+    app.useStaticAssets(join(__dirname, '..', 'public'));
+    app.setBaseViewsDir(join(__dirname, '..', 'views'));
     app.setViewEngine('hbs');
     await app.init();
   });
