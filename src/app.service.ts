@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello Docker!';
+  getAgenda(): string {
+    return 'Introduction to Dockerfile, building container image, running application in container and sharing container image';
   }
 }

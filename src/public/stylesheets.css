@@ -1,0 +1,55 @@
+body {
+  background-color: #2185c5;
+  color: white;
+  font-family: 'Lato', sans-serif;
+}
+
+#container {
+  width: 80%;
+  margin: 10% auto;
+}
+
+#container .col-three-fourth {
+  width: 75%;
+}
+
+#container .col-three-fourth #header {
+  font-size: 52pt;
+  font-weight: bold;
+}
+
+#container .col-three-fourth #agenda {
+  font-size: 29pt;
+}
+
+#footer {
+  width: 100%;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+}
+
+#footer span {
+  height: 10px;
+  float: left;
+}
+
+#footer span:nth-child(1) {
+  width: 10%;
+  background-color: #dee2e6;
+}
+
+#footer span:nth-child(2) {
+  width: 70%;
+  background-color: #7ecefd;
+}
+
+#footer span:nth-child(3) {
+  width: 10%;
+  background-color: #ff9715;
+}
+
+#footer span:nth-child(4) {
+  width: 10%;
+  background-color: #f20253;
+}

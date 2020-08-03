@@ -15,8 +15,10 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello Docker!"', () => {
-      expect(appController.getHello()).toBe('Hello Docker!');
+    it('should return agenda', () => {
+      expect(appController.getAppRoot()).toEqual({
+        agenda: 'Introduction to Dockerfile, building container image, running application in container and sharing container image'
+      });
     });
   });
 });

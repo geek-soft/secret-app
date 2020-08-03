@@ -1,10 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { INestApplication } from '@nestjs/common';
+import { NestExpressApplication } from "@nestjs/platform-express";
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
+import { join } from "path";
 
 describe('AppController (e2e)', () => {
-  let app: INestApplication;
+  let app: NestExpressApplication;
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
@@ -12,6 +13,9 @@ describe('AppController (e2e)', () => {
     }).compile();
 
     app = moduleFixture.createNestApplication();
+    app.useStaticAssets(join(__dirname, '..', 'src', 'public'));
+    app.setBaseViewsDir(join(__dirname, '..', 'src', 'views'));
+    app.setViewEngine('hbs');
     await app.init();
   });
 
@@ -19,6 +23,9 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
-      .expect('Hello Docker!');
+      .expect(response => {
+        expect(response.text).toContain('Welcome to Docker hands-on session!')
+        expect(response.text).toContain('Introduction to Dockerfile, building container image, running application in container and sharing container image')
+      });
   });
 });
